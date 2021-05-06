@@ -1,18 +1,16 @@
 import React from 'react';
 export default function Opcao(props){
-  const [borda, setBorda] = React.useState(false); 
+  const [borda, setBorda] = React.useState(props.borda); 
   const [array, setArray] = React.useState(props.array);
   const [contador, setContador] = React.useState(0); 
 
-  //setArray(array.forEach((item) => item.borda=borda));
-  function Selecionado(){
-   if(!borda){
-    setBorda(true);
-    setContador(1);
-   }
+
+  function Selecionado(item){
+    setArray(props.Desmarcar(item));
+console.log(array); 
   }
 
-  function Decrementar(cont, borda){
+  function Decrementar(cont){
     (cont>1)?setContador(contador-1):setBorda(false);
   }
   function Incrementar(cont){
@@ -20,7 +18,7 @@ export default function Opcao(props){
   }
 
     return(
-        <div  className={borda===true ? "opcao selecionado": "opcao"} onClick={Selecionado}>
+        <div  className={borda===true ? "opcao selecionado": "opcao"} onClick={()=>Selecionado(props.titulo)}>
         <img src={props.imagem} />
         <div class="titulo">{props.titulo}</div>
         <div class="descricao">{props.descricao}</div>
