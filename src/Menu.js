@@ -7,11 +7,8 @@ export default function Menu(){
     const [opcaoPrato, setOpcaoPrato] = React.useState(0); 
     return(
         <div class="menu">
-         <SecaoPratos opcaoSelecao={opcaoPrato}/>
-         <SecaoBebidas/>
-         <SecaoSobremesas/>
+         <SecaoPratos />
       </div>
     );
-    alert(opcaoPrato);
 }
 
