@@ -98,8 +98,17 @@ body {
 
 .opcao .check {
   opacity: 0;
-  color: #32B72F;
-  font-size: 20px;
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+.opcao .check .menos{
+  color:#CF2B2B;
+  margin-right: 2px;
+}
+.opcao .check .mais{
+  color:#32B72F;
+  margin-left: 2px;
 }
 
 .menu .secao .opcoes .opcao.selecionado .check {
