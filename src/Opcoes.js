@@ -11,10 +11,7 @@ export default function Opcao(props){
         element.contador=1;
         incluiItens(item,element.preco,element.contador);
          }
-      else{element.borda=false
-           element.cont=0;
-           
-    }});
+});
       const novoArray=[...array];
       setArray(novoArray);
     
@@ -28,16 +25,39 @@ export default function Opcao(props){
       preco: preco,
       contador: contador,
     }    
-    const novaArray = [itemSelecionado];
-    setTodosItens(novaArray);   
+    const novaArray = [...todosItens,itemSelecionado];
+    setTodosItens(novaArray);
+  }
+
+  function excluiItens(nome){
+    const novaArray = todosItens.filter((item) => item.nome !== nome);
+    setTodosItens(novaArray);
+  }
+
+  function atualizaContador(nome,contador){
+    const itensAtualizados = todosItens.map((item) => {
+      if (item.nome === nome) {
+        return {
+          nome: nome,
+          preco: item.preco,
+          contador: contador,
+        };
+      } else {
+        return item;
+      }      
+    });
+    setTodosItens(itensAtualizados);
+    //console.log(itensAtualizados)
   }
 
   function Decrementar(item){
     array.forEach(element => {if(element.titulo === item ) {
       element.contador-=1;
-      incluiItens(item,element.preco,element.contador);
+      //incluiItens(item,element.preco,element.contador);
+      atualizaContador(item,element.contador);
       if(element.contador===0) {
-        setTodosItens([]);
+        //setTodosItens([]);
+        excluiItens(item);
         element.borda=false;}     
       }
     });
@@ -50,8 +70,8 @@ export default function Opcao(props){
         
     array.forEach(element => {if(element.titulo === item ) {
       element.contador+=1;
-      incluiItens(item,element.preco,element.contador);
-
+      //incluiItens(item,element.preco,element.contador);
+      atualizaContador(item,element.contador);
     } });
 
   const novoArray=[...array];

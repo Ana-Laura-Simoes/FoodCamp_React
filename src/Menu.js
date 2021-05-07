@@ -53,10 +53,10 @@ export default function Menu(props){
         console.log(qtdSobremesa);
       }
 
-      //console.clear()
-      //console.log(todosPratos)
-      //console.log(todasBebidas)
-      //console.log(todasSobremesas)
+      console.clear()
+      console.log(todosPratos)
+      console.log(todasBebidas)
+      console.log(todasSobremesas)
       //console.log(todos);
 
     return(
