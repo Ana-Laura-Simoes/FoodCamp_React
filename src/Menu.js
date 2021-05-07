@@ -44,7 +44,6 @@ export default function Menu(props){
         console.log(qtdBebida);
 
         for(let i=0;i<todasSobremesas.length;i++){
-            console.log("lala");
             nomeSobremesa=todasSobremesas[i].nome;
             precoSobremesa=todasSobremesas[i].preco.replace(",",".");
             qtdSobremesa=todasSobremesas[i].contador;
@@ -58,11 +57,11 @@ export default function Menu(props){
       //console.log(todosPratos)
       //console.log(todasBebidas)
       //console.log(todasSobremesas)
-      console.log(todos);
+      //console.log(todos);
 
     return(
         <>
-        <div class="menu">
+        <div className="menu">
          <SecaoPratos
           todosPratos={todosPratos}
           setTodosPratos={setTodosPratos}

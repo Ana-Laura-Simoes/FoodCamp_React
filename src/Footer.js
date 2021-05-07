@@ -16,8 +16,8 @@ export default function Footer(props){
   
 
     return(
-        <div class="footer">
-        <a href={todos===true?url:"#"} class={todos===true? "fazer-pedido ativo" : "fazer-pedido"}>
+        <div className="footer">
+        <a href={todos===true?url:"#"} className={todos===true? "fazer-pedido ativo" : "fazer-pedido"}>
        { todos===true? (<p>Fechar pedido</p>):(<p>Selecione os 3 itens<br />para fechar o pedido</p>)}
         </a>
       </div>

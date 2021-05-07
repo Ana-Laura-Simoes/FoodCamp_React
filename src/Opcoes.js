@@ -4,10 +4,7 @@ export default function Opcao(props){
   const {todosItens, setTodosItens} = props;
   const [array, setArray] = React.useState(props.array);
 
-  
-
   function Selecionado(borda,item){
-
     if(!borda){ 
       array.forEach(element => {if(element.titulo === item ) {
         element.borda=true;
@@ -22,11 +19,8 @@ export default function Opcao(props){
       setArray(novoArray);
     
     }
- 
   }
 
-  
-  
 
   function incluiItens(item,preco,contador){  
     const itemSelecionado = {
@@ -75,14 +69,12 @@ export default function Opcao(props){
           <div className="descricao">{item.descricao}</div>
           <div className="preco">R$ {item.preco}</div>
           <div className="check">
-          <span className="menos"onClick={(e) => { e.stopPropagation(); Decrementar(item.titulo) }}>- </span> {item.contador} <span class="mais" onClick={()=>Incrementar(item.titulo)}> +</span>
+          <span className="menos"onClick={(e) => { e.stopPropagation(); Decrementar(item.titulo) }}>- </span> {item.contador} <span className="mais" onClick={()=>Incrementar(item.titulo)}> +</span>
           </div>
         </div>
   
       );
     })
   );
-
-
 
 }
