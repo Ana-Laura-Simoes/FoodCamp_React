@@ -7,20 +7,16 @@ export default function Opcao(props){
   
 
   function Selecionado(borda,item){
-    if(!borda){
+
+    if(!borda){ 
       array.forEach(element => {if(element.titulo === item ) {
         element.borda=true;
         element.contador=1;
         incluiItens(item,element.preco,element.contador);
-         <Finalizar
-          nome={item}
-         preco={element.preco}
-        //contador={element.contador}
-         />
-
          }
       else{element.borda=false
-    element.cont=0;
+           element.cont=0;
+           
     }});
       const novoArray=[...array];
       setArray(novoArray);
@@ -29,21 +25,18 @@ export default function Opcao(props){
  
   }
 
+  
+  
+
   function incluiItens(item,preco,contador){  
     const itemSelecionado = {
       nome: item,
       preco: preco,
       contador: contador,
     }    
-    const novaArray = [...todosItens, itemSelecionado];
+    const novaArray = [itemSelecionado];
     setTodosItens(novaArray);  
   }
-
-
-
-
-
-
 
   function Decrementar(item){
     array.forEach(element => {if(element.titulo === item ) {
