@@ -6,16 +6,10 @@ export default function SecaoPratos(props){
         {borda:false,contador:0,imagem:"img/coxinha.jpg" ,titulo:"Coxinha de Jaca" ,descricao:"Não é frango, mas é bom" ,preco:"7,90"},
         {borda:false,contador:0,imagem:"img/pastel.jpg" ,titulo:"Pastel" ,descricao:"Nada a declarar",preco:"9,90"}];
 
-        
-
-
-
-
-
         return(
-        <div class="secao">
-          <div class="titulo">Primeiro, seu prato</div>
-          <div class="opcoes pratos">
+        <div className="secao">
+          <div className="titulo">Primeiro, seu prato</div>
+          <div className="opcoes pratos">
           <Opcao array={pratos}
               todosItens={todosPratos}
               setTodosItens={setTodosPratos}          

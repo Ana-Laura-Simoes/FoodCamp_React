@@ -5,9 +5,9 @@ export default function SecaoBebidas(props){
         {imagem:"img/guarana.jpg" ,titulo:"Guaraná gelado" ,descricao:"Lata 350ml" ,preco:"4,90"},
         {imagem:"img/suco.jpg" ,titulo:"Suquinho gelado" ,descricao:"500ml" ,preco:"7,90"}];    
     return(
-        <div class="secao">
-          <div class="titulo">Agora, sua bebida</div>
-          <div class="opcoes bebidas">
+        <div className="secao">
+          <div className="titulo">Agora, sua bebida</div>
+          <div className="opcoes bebidas">
             <Opcao array={bebidas}
             todosItens={todasBebidas}
             setTodosItens={setTodasBebidas}/>

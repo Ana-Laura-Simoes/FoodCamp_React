@@ -5,9 +5,9 @@ export default function SecaoSobremesas(props){
         {imagem:"img/mousse.jpg" ,titulo:"Mousse" ,descricao:"Cremoso, gostoso" ,preco:"6,90"},
         {imagem:"img/brownie.png" ,titulo:"Brownie" ,descricao:"É um bolinho" ,preco:"4,90"}];    
     return(
-        <div class="secao">
-          <div class="titulo">Por fim, sua sobremesa</div>
-          <div class="opcoes sobremesas">
+        <div className="secao">
+          <div className="titulo">Por fim, sua sobremesa</div>
+          <div className="opcoes sobremesas">
             <Opcao  array={sobremesas}
               todosItens={todasSobremesas}
               setTodosItens={setTodasSobremesas}           

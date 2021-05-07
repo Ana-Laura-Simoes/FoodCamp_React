@@ -1,6 +1,5 @@
   
 import React from 'react';
-import Finalizar from "./Finalizar";
 export default function Opcao(props){
   const {todosItens, setTodosItens} = props;
   const [array, setArray] = React.useState(props.array);
@@ -72,11 +71,11 @@ export default function Opcao(props){
       return(
           <div  className={item.borda===true ? "opcao selecionado": "opcao"} onClick={()=>Selecionado(item.borda,item.titulo)}>
           <img src={item.imagem} />
-          <div class="titulo">{item.titulo}</div>
-          <div class="descricao">{item.descricao}</div>
-          <div class="preco">R$ {item.preco}</div>
-          <div class="check">
-          <span class="menos"onClick={(e) => { e.stopPropagation(); Decrementar(item.titulo) }}>- </span> {item.contador} <span class="mais" onClick={()=>Incrementar(item.titulo)}> +</span>
+          <div className="titulo">{item.titulo}</div>
+          <div className="descricao">{item.descricao}</div>
+          <div className="preco">R$ {item.preco}</div>
+          <div className="check">
+          <span className="menos"onClick={(e) => { e.stopPropagation(); Decrementar(item.titulo) }}>- </span> {item.contador} <span class="mais" onClick={()=>Incrementar(item.titulo)}> +</span>
           </div>
         </div>
   
