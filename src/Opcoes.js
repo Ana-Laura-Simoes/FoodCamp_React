@@ -1,3 +1,4 @@
+  
 import React from 'react';
 import Finalizar from "./Finalizar";
 export default function Opcao(props){
@@ -35,16 +36,17 @@ export default function Opcao(props){
       contador: contador,
     }    
     const novaArray = [itemSelecionado];
-    setTodosItens(novaArray);  
+    setTodosItens(novaArray);   
   }
 
   function Decrementar(item){
     array.forEach(element => {if(element.titulo === item ) {
       element.contador-=1;
-      //const contador=element.contador;
-      //props.contador(contador);
-      if(element.contador===0) element.borda=false;     
-    }//console.log(element);
+      incluiItens(item,element.preco,element.contador);
+      if(element.contador===0) {
+        setTodosItens([]);
+        element.borda=false;}     
+      }
     });
     const novoArray=[...array];
     setArray(novoArray);
@@ -52,10 +54,11 @@ export default function Opcao(props){
   }
 
   function Incrementar(item){
-    //setContador(contador+1);    
-    array.forEach(element => {if(element.titulo === item ) {element.contador+=1;
-      //const contador=element.contador;
-      //props.contador(contador); 
+        
+    array.forEach(element => {if(element.titulo === item ) {
+      element.contador+=1;
+      incluiItens(item,element.preco,element.contador);
+
     } });
 
   const novoArray=[...array];
