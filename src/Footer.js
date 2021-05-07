@@ -1,18 +1,10 @@
 import React from 'react';
 export default function Footer(props){
-  const {todos,nomePrato,precoPrato,qtdPrato,nomeBebida,precoBebida,qtdBebida,nomeSobremesa,precoSobremesa,qtdSobremesa}=props;
-
-  let precoPratoTotal=parseFloat(precoPrato)*qtdPrato;
-  let precoBebidaTotal=parseFloat(precoBebida)*qtdBebida;
-  let precoSobremesaTotal=parseFloat(precoSobremesa)*qtdSobremesa;
-
-  let precoTotal=  (precoPratoTotal + precoBebidaTotal + precoSobremesaTotal).toFixed(2);
-
-  let mensagem=`Olá, gostaria de fazer o pedido: - Prato: ${nomePrato} (${qtdPrato}x) - Bebida: ${nomeBebida} (${qtdBebida}x) - Sobremesa: ${nomeSobremesa} (${qtdSobremesa}x) Total: R$ ${precoTotal} `;
-
+  const {todos,mensagem}=props;
+  
   const mensagemFormatada = encodeURIComponent(mensagem);
 
-  const url = `https://wa.me/5521999998844?text=${mensagemFormatada}`;
+  const url = `https://wa.me/5521991234?text=${mensagemFormatada}`;
   
 
     return(

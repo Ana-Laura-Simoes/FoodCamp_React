@@ -10,55 +10,45 @@ export default function Menu(props){
     const [todasBebidas, setTodasBebidas] = React.useState([]);
     const [todasSobremesas, setTodasSobremesas] = React.useState([]);
     let todos = false;
-    let nomePrato;
-    let precoPrato;
-    let qtdPrato;
-    let nomeBebida;
-    let precoBebida;
-    let qtdBebida;
-    let nomeSobremesa;
-    let precoSobremesa;
-    let qtdSobremesa;
+    let pratitos="";
+    let valorPratitos=0;
+    let bebitas="";
+    let valorBebitas=0;
+    let sobremesitas="";
+    let valorSobremesitas=0;
 
     if(todosPratos.length > 0 && todasBebidas.length > 0 && todasSobremesas.length > 0) {
         todos = true;
         console.clear();
         for(let i=0;i<todosPratos.length;i++){
-            console.log("lala");
-            nomePrato=todosPratos[i].nome;
-            precoPrato=todosPratos[i].preco.replace(",",".");
-            qtdPrato=todosPratos[i].contador;
+            let nomePrato=todosPratos[i].nome;
+            let precoPrato=todosPratos[i].preco.replace(",",".");
+            let qtdPrato=todosPratos[i].contador;
+            pratitos +=` ${nomePrato} (${qtdPrato}x)`;
+            valorPratitos+=parseFloat(precoPrato)*qtdPrato;
         }
-        console.log(nomePrato);
-        console.log(precoPrato);
-        console.log(qtdPrato);
-
         for(let i=0;i<todasBebidas.length;i++){
-            console.log("lala");
-            nomeBebida=todasBebidas[i].nome;
-            precoBebida=todasBebidas[i].preco.replace(",",".");
-            qtdBebida=todasBebidas[i].contador;
+            let nomeBebida=todasBebidas[i].nome;
+            let precoBebida=todasBebidas[i].preco.replace(",",".");
+            let qtdBebida=todasBebidas[i].contador;
+            bebitas+=` ${nomeBebida} (${qtdBebida}x)`;
+            valorBebitas+=parseFloat(precoBebida)*qtdBebida;
         }
-        console.log(nomeBebida);
-        console.log(precoBebida);
-        console.log(qtdBebida);
+
 
         for(let i=0;i<todasSobremesas.length;i++){
-            nomeSobremesa=todasSobremesas[i].nome;
-            precoSobremesa=todasSobremesas[i].preco.replace(",",".");
-            qtdSobremesa=todasSobremesas[i].contador;
+            let nomeSobremesa=todasSobremesas[i].nome;
+            let precoSobremesa=todasSobremesas[i].preco.replace(",",".");
+            let qtdSobremesa=todasSobremesas[i].contador;
+            sobremesitas+=` ${nomeSobremesa} (${qtdSobremesa}x)`;
+            valorSobremesitas+=parseFloat(precoSobremesa)*qtdSobremesa;
         }
-        console.log(nomeSobremesa);
-        console.log(precoSobremesa);
-        console.log(qtdSobremesa);
       }
 
-      console.clear()
-      console.log(todosPratos)
-      console.log(todasBebidas)
-      console.log(todasSobremesas)
-      //console.log(todos);
-
+      console.clear() 
+      let precoTotal=  (valorPratitos + valorBebitas + valorSobremesitas).toFixed(2);
+      let mensagem=`Olá, gostaria de fazer o pedido:\n- Prato: ${pratitos}\n- Bebida: ${bebitas}\n- Sobremesa: ${sobremesitas}\nTotal: R$ ${precoTotal}`;
+      console.log(mensagem);
     return(
         <>
         <div className="menu">
@@ -76,15 +66,8 @@ export default function Menu(props){
          />
       </div>
       <Footer todos={todos}
-          nomePrato={nomePrato}
-          precoPrato={precoPrato}
-          qtdPrato={qtdPrato}
-          nomeBebida={nomeBebida}
-          precoBebida={precoBebida}
-          qtdBebida={qtdBebida}
-          nomeSobremesa={nomeSobremesa}
-          precoSobremesa={precoSobremesa}
-          qtdSobremesa={qtdSobremesa}
+       mensagem={mensagem}
+          
       />
       </>
     );
